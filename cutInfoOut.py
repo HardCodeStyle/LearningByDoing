@@ -9,12 +9,12 @@ price=split_string_two[0].replace('"',"")
 new_price=float(price.strip())
 print(price)
 dateTimeObj = datetime.now()
-print(dateTimeObj)
+print(dateTimeObj.date())
 with open('Price.txt', 'a') as f:
     f.write("\n")
     f.write(str(new_price))
     f.write(",")
-    f.write(str(dateTimeObj))
+    f.write(str(dateTimeObj.date()))
 
 
 
