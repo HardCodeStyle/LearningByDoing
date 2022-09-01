@@ -13,7 +13,7 @@ print(dateTimeObj)
 with open('Price.txt', 'a') as f:
     f.write("\n")
     f.write(str(new_price))
-    f.write("---")
+    f.write(",")
     f.write(str(dateTimeObj))
 
 
