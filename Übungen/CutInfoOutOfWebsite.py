@@ -1,4 +1,4 @@
-fileName = '../MSCI_ACWI.txt'  # Dateiname oder pfad
+fileName = '../Download/MSCI_ACWI.txt'  # Dateiname oder pfad
 beforeInformation = 'data-last-price='  # Html teil vor info ohne anführungszeichen
 behindInformation = 'data-last-normal-market-timestamp'  # Html teil nach info ohne anführungszeichen
 with open(fileName) as f:
