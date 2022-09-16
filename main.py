@@ -95,18 +95,23 @@ def erzeugeListe(persnr, zeiten, jahr, monat):
         no_pairs_time.append([i[0], i[1], i[2], 0, 0, 0, 'Buchung fehlt'])
     no_pairs_time.remove([0, 0, 0, 0, 0, 0, ''])
     res = sorted(pairs_time + no_pairs_time)
+    print(len(res))
     if len(res) < 31:
+        b=0
         for x in range(1, 31):
             if x == res[x][0]:
                 a = 0
             else:
-                res.insert(x, [x, 0, 0, 0, 0, 0, 'nicht anwesend'])
-    res.remove([1, 0, 0, 0, 0, 0, 'nicht anwesend'])
+                if b<=2:
+                    b=1
+                else:
+                    res.insert(x, [x, 0, 0, 0, 0, 0, 'nicht anwesend'])
+
 
     for i in res:
         schreibeZeile(i[0], i[1], i[2], i[3], i[4], i[5], i[6])
     schreibeFuss(awm)
-
+    print(len(res))
 
 pass
 
