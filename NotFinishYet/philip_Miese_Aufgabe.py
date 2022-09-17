@@ -97,21 +97,18 @@ def erzeugeListe(persnr, zeiten, jahr, monat):
     res = sorted(pairs_time + no_pairs_time)
     print(len(res))
     if len(res) < 31:
-        b=0
-        for x in range(1, 31):
-            if x == res[x][0]:
-                a = 0
-            else:
-                if b<=2:
-                    b=1
-                else:
-                    res.insert(x, [x, 0, 0, 0, 0, 0, 'nicht anwesend'])
+        b = 0
+        z=int(len(res))
+        print(z)
 
+        for x in res:
+            f= [x[0]]
 
     for i in res:
         schreibeZeile(i[0], i[1], i[2], i[3], i[4], i[5], i[6])
     schreibeFuss(awm)
     print(len(res))
+
 
 pass
 
