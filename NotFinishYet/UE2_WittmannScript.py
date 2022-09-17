@@ -8,9 +8,9 @@ liste = [[False, True, True, False, True, False, True, True, False, True, False,
          [True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]]
 
 
-def make_list(listOfPlace):
-    f=[[1,1]]
-    for i in listOfPlace:
+def make_list(list_of_place):
+    f = [[1, 1]]
+    for i in list_of_place:
         f.append()
 
 

@@ -5,7 +5,7 @@
 #              for a question from the final exam written by Computer Engineers
 from random import randint
 
-################ NICHT RELEVANT UM AUFGABE ZU BEARBEITEN
+# NICHT RELEVANT UM AUFGABE ZU BEARBEITEN
 
 # Wen es interessiert: Das hier nennt sich list comprehension
 zeiterfassungstabelle = [[tag, randint(6, 10) * i, randint(1, 30) * i - 1]
@@ -15,13 +15,13 @@ zeiterfassungstabelle = [[tag, randint(6, 10) * i, randint(1, 30) * i - 1]
 zeiterfassungstabelle = sorted(zeiterfassungstabelle, key=lambda row: row[0])
 
 
-################ Hilfsfunktionen
+# Hilfsfunktionen
 
-def tageImMonat(monat, jahr):
+def tage_im_monat(monat, jahr):
     return 31  # lel
 
 
-def schreibeKopf(persnr, jahr, monat):
+def schreibe_kopf(persnr, jahr, monat):
     monat = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli",
              "August", "September", "Oktober", "November", "Dezember"][monat - 1]
     heading = f'Mitarbeiter: {persnr: <5}{" " * 8}{monat} {jahr}'
@@ -32,39 +32,39 @@ def schreibeKopf(persnr, jahr, monat):
     print(tbl_spacer)
 
 
-def schreibeZeile(tag, std1, min1, std2, min2, anwTag, bemerkung):
-    anwStd = anwTag // 60
-    anwMin = anwTag % 60
+def schreibe_zeile(tag, std1, min1, std2, min2, anw_tag, bemerkung):
+    anw_std = anw_tag // 60
+    anw_min = anw_tag % 60
     if std1 == -1 and min1 == -1:
         sm1 = " " * 5
-        anwT = "00:00"
+        anw_t = "00:00"
     else:
         sm1 = f'{std1:02}:{min1:02}'
-        anwT = f'{anwStd:02}:{anwMin:02}'
+        anw_t = f'{anw_std:02}:{anw_min:02}'
 
     if std2 == -1 and min2 == -1:
         sm2 = " " * 5
-        anwT = "00:00"
+        anw_t = "00:00"
     else:
         sm2 = f'{std2:02}:{min2:02}'
-        anwT = f'{anwStd:02}:{anwMin:02}'
+        anw_t = f'{anw_std:02}:{anw_min:02}'
 
-    tbl_row = f'{tag: <5}{sm1}   {sm2}   {anwT}{" " * 8}{bemerkung}'
+    tbl_row = f'{tag: <5}{sm1}   {sm2}   {anw_t}{" " * 8}{bemerkung}'
     print(tbl_row)
 
 
-def schreibeFuss(anwMonat):
-    anwStd = anwMonat // 60
-    anwMin = anwMonat % 60
+def schreibe_fuss(anw_monat):
+    anw_std = anw_monat // 60
+    anw_min = anw_monat % 60
     tbl_spacer = "=" * 48
-    footer = f'Summe Anwesenheit:  {anwStd:02}:{anwMin:02}'
+    footer = f'Summe Anwesenheit:  {anw_std:02}:{anw_min:02}'
     print(tbl_spacer)
     print(footer + "\n")
 
 
-################ LÖSUNGSANSATZ HIER BEGINNEN
+# LÖSUNGSANSATZ HIER BEGINNEN
 
-# Wichtige Infos aus der Angabe:
+# Wichtige Informationen aus der Angabe:
 #
 # Pro Tag max. zwei Zeiten
 # => 2 Zeiten: Kommen, Gehen, (Gehen - Kommen), ---
@@ -74,10 +74,10 @@ def schreibeFuss(anwMonat):
 # Ende der Liste: Summe der Anwesenheitszeichen
 # Ausgabe: Tabelle für einen Monat für einen MA
 
-def erzeugeListe(persnr, zeiten, jahr, monat):
+def erzeuge_liste(persnr, zeiten, jahr, monat):
     # Implementierung hier hin (:
-    schreibeKopf(persnr, jahr, monat)
-    awm = 0;
+    schreibe_kopf(persnr, jahr, monat)
+    awm = 0
     pairs_time = [[0, 0, 0, 0, 0, 0, '']]
     no_pairs_time = [[0, 0, 0, 0, 0, 0, '']]
     to_remove_time = [[0, 0, 0]]
@@ -98,19 +98,19 @@ def erzeugeListe(persnr, zeiten, jahr, monat):
     print(len(res))
     if len(res) < 31:
         b = 0
-        z=int(len(res))
+        z = int(len(res))
         print(z)
 
         for x in res:
-            f= [x[0]]
+            f = [x[0]]
 
     for i in res:
-        schreibeZeile(i[0], i[1], i[2], i[3], i[4], i[5], i[6])
-    schreibeFuss(awm)
+        schreibe_zeile(i[0], i[1], i[2], i[3], i[4], i[5], i[6])
+    schreibe_fuss(awm)
     print(len(res))
 
 
 pass
 
-################ TABELLE ERZEUGEN
-erzeugeListe(12345, zeiterfassungstabelle, 2021, 10)
+# TABELLE ERZEUGEN
+erzeuge_liste(12345, zeiterfassungstabelle, 2021, 10)

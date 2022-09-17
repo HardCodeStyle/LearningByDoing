@@ -1,6 +1,6 @@
 fileName = '../Download/MSCI_ACWI.txt'  # Dateiname oder pfad
-beforeInformation = 'data-last-price='  # Html teil vor info ohne anführungszeichen
-behindInformation = 'data-last-normal-market-timestamp'  # Html teil nach info ohne anführungszeichen
+beforeInformation = 'data-last-price='  # Html Teil vor info ohne anführungszeichen
+behindInformation = 'data-last-normal-market-timestamp'  # Html Teil nach info ohne anführungszeichen
 with open(fileName) as f:
     content = str(f.readlines())
 splitBeforeInfo = content.split(beforeInformation, 1)

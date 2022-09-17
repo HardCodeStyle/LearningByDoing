@@ -16,12 +16,11 @@ def remove_empty_lines(filename):
         filehandle.writelines(lines)
 
 
-
 a = ping('www.google.de')
 dateTimeObj = datetime.now()
-remove_empty_lines('Ping_'+str(dateTimeObj.date())+'.txt')
+remove_empty_lines('Ping_' + str(dateTimeObj.date()) + '.txt')
 print(dateTimeObj.time())
-with open('Ping_'+str(dateTimeObj.date())+'.txt', 'a') as f:
+with open('Ping_' + str(dateTimeObj.date()) + '.txt', 'a') as f:
     f.write("\n")
     f.write(str(a))
     f.write("")
