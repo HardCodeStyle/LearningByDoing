@@ -9,9 +9,9 @@ Thank You
 '''
 
 # The mail addresses and password
-sender_address = 'julienhenning00@gmail.com'
-sender_pass = 'mjkktpajpwacmvxv'
-receiver_address = 'Julien.Henning@bs1in.de'
+sender_address = '**********'
+sender_pass = '**********'
+receiver_address = '**********'
 # Set up the MIME
 message = MIMEMultipart()
 message['From'] = sender_address
